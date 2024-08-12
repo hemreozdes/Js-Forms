@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #sq{
+                text-decoration: underline;
+                margin-left: 2px;
+            }
+            #btn{
+                margin-top: 5px;
+            }
+            #btn:hover{
+                background-color: gainsboro;
+                display: inline-block;
+                transform: scale(1.02);
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+        <body>
+            <form>
+                <table>
+                    <tr><td><b>Number: </b></td><td><input type="text" id="number"></td></tr>
+                    <tr><td><b>Square: </b></td><td><span id="sq"></span></td></tr> 
+                    <tr><td></td><td><input type="button" id="btn" value="Submit" onclick="calculate()"></td><td></td></tr> 
+                </table>
+            </form>
+            <script>
+                function calculate(){
+                    var num=Number(document.getElementById("number").value);
+                    if(num==""){
+                        alert("Please enter a number!");
+                    }
+                    else if(num<=0){
+                        alert("Enter positive number!");
+                    }
+                    else{
+                        var square=num*num;
+                        document.getElementById("sq").innerHTML=square;
+                    }
+                }
+            </script>
+        </body>
+    </head>
+</html>
